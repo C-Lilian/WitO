@@ -1,0 +1,18 @@
+@import '/src/assets/main.scss';
+
+.footerDiv {
+  padding: 5px 0px;
+  text-align: center;
+}
+
+.linkCLilian a {
+  color: var(--wito-text-footer);
+  outline: none;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--wito-text-footer);
+}
+
+.linkCLilian a:hover {
+  border-bottom: none;
+}

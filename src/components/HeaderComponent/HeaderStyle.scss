@@ -1,0 +1,14 @@
+@import '/src/assets/main.scss';
+
+.headerDiv {
+  text-align: center;
+  border-bottom: 1px solid var(--wito-black-light-25);
+  padding: 5px 0px;
+}
+
+.titleApp {
+  font-family: 'Coustard', sans-serif;
+  font-weight: 900;
+  font-size: var(--wito-text-height-32);
+  color: var(--wito-text-header);
+}

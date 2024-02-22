@@ -1,0 +1,39 @@
+@import '/src/assets/main.scss';
+
+.infiniteBodyDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 15px 0px;
+  height: calc(100% - 30px);
+}
+
+.infiniteDiv {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--wito-background-mode);
+  color: var(--wito-text-mode);
+  border-radius: 10px;
+}
+
+.headerInfiniteDiv {
+  display: flex;
+  gap: 263px;
+  padding: 15px 30px;
+  border-bottom: 1px solid var(--wito-white-light-25);
+}
+
+.headerInfiniteDiv h3 {
+  font-family: 'Coustard', sans-serif;
+  font-weight: 900;
+}
+
+.bodyInfiniteDiv {
+  padding: 30px 50px;
+}
+
+.goHome {
+  cursor: pointer;
+}
