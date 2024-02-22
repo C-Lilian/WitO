@@ -1,0 +1,116 @@
+.coustard-regular {
+  font-family: "Coustard", serif;
+  src: url(./fonts/Coustard-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.coustard-black {
+  font-family: "Coustard", serif;
+  src: url(./fonts/Coustard-Black.ttf);
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Color palette for Wito project */
+:root {
+  --wito-white: #ffffff;
+  --wito-white-soft: #f8f8f8;
+  --wito-white-mute: #f2f2f2;
+
+  --wito-black: #181818;
+  --wito-black-soft: #222222;
+  --wito-black-mute: #282828;
+
+  --havelock-blue-50: #f1f7fd;
+  --havelock-blue-100: #e0edf9;
+  --havelock-blue-200: #c8dff5;
+  --havelock-blue-300: #a2ccee;
+  --havelock-blue-400: #76afe4;
+  --havelock-blue-500: #5290da;
+  --havelock-blue-600: #4279ce;
+  --havelock-blue-700: #3865bd;
+  --havelock-blue-800: #33539a;
+  --havelock-blue-900: #2e487a;
+  --havelock-blue-950: #202d4b;
+
+  --wito-black-light-25: rgba(0, 0, 0, 0.25);
+  --wito-white-light-25: rgba(255, 255, 255, 0.25);
+}
+
+/* semantic color variables for this project */
+:root {
+  --wito-color-background: linear-gradient(to bottom right, var(--havelock-blue-50), var(--havelock-blue-400));
+  --wito-border-header: var(--wito-black-light-25);
+
+  --wito-text-header: var(--havelock-blue-900);
+  --wito-text-footer: var(--havelock-blue-900);
+
+  --wito-text-menu: var(--havelock-blue-800);
+  --wito-text-mode: var(--wito-white);
+  --wito-background-mode: var(--havelock-blue-950);
+  --wito-border-mode-header: var(--wito-white-light-25);
+  --wito-background-mode-card: var(--havelock-blue-800);
+  --wito-border-mode-card: linear-gradient(var(--havelock-blue-50), var(--havelock-blue-400));
+  --wito-border-mode-btn: linear-gradient(to right, var(--havelock-blue-50), var(--havelock-blue-400));
+  --wito-background-mode-btn: var(--havelock-blue-800);
+}
+
+/* Font */
+:root {
+  font-size: 20px;
+  --wito-text-height-20: 1rem; /* 20px */
+  --wito-text-height-24: 1.2rem; /* 24px */
+  --wito-text-height-32: 1.6rem; /* 32px */
+  --wito-text-height-36: 1.8rem; /* 36px */
+  --wito-text-height-96: 4.8rem; /* 96px */
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--wito-color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    'Coustard',
+    var(--wito-font-text),
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
