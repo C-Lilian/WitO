@@ -6,7 +6,56 @@
         <h3>Infinite Mode</h3>
         <p>Reload</p>
       </div>
-      <div class="bodyInfiniteDiv"></div>
+      <div class="bodyInfiniteDiv">
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+        <div class="card card1">
+          <span class="cardBack">?</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
