@@ -47,8 +47,10 @@
   border-width: 2px;
   border-style: solid;
   border-color: var(--wito-border-mode-card);
-  width: 100px;
-  height: 150px;
+  min-width: 85px;
+  max-width: 100px;
+  // min-height: 100px;
+  // max-height: 150px;
   border-radius: 5px;
 }
 
@@ -57,7 +59,8 @@
 }
 
 .cardBack {
-  font-size: var(--wito-text-height-96);
+  // font-size: var(--wito-text-height-96);
+  font-size: 56px;
   font-family: 'Coustard', sans-serif;
   font-weight: 400;
   display: block;

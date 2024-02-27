@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },
