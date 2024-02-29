@@ -42,25 +42,48 @@
 }
 
 .card {
+  position: relative;
+  perspective: 1000px;
   cursor: pointer;
-  background-color: var(--wito-background-mode-card);
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--wito-border-mode-card);
   min-width: 85px;
   max-width: 100px;
-  // min-height: 100px;
-  // max-height: 150px;
-  border-radius: 5px;
+  min-height: 100px;
+  max-height: 150px;
+  
+  .card-side {
+    height: 100%;
+    width: 100%;
+    transition: transform 0.8s ease-in-out;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: var(--wito-background-mode-card);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--wito-border-mode-card);
+    border-radius: 5px;
+    
+    &:hover {
+      box-shadow: 4px 4px 2px var(--wito-white-light-25);
+    }
+  }
 }
 
-.card:hover {
-  box-shadow: 4px 4px 2px var(--wito-white-light-25);
+.card-side.front {
+  transform: rotateY(-180deg);
 }
 
-.cardBack {
-  // font-size: var(--wito-text-height-96);
-  font-size: 56px;
+.card.active .card-side.back, .card.validate .card-side.back {
+  transform: rotateY(180deg);
+}
+.card.active .card-side.front, .card.validate .card-side.front {
+  transform: rotateY(0deg);
+}
+
+.card-side.back, .card-side.front {
+  font-size: var(--wito-text-height-56);
   font-family: 'Coustard', sans-serif;
   font-weight: 400;
   display: block;
