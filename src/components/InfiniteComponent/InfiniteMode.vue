@@ -1,14 +1,14 @@
 <script setup>
 
 var lstIconSimple = [
-  "dove", "dove",
-  "cow", "cow",
-  "hippo", "hippo",
-  "otter", "otter",
-  "dragon", "dragon",
-  "shrimp", "shrimp",
-  "locust", "locust",
-  "frog", "frog"
+  "dove",
+  "cow",
+  "hippo",
+  "otter",
+  "dragon",
+  "shrimp",
+  "locust",
+  "frog",
 ]
 var lstIcons = [...lstIconSimple, ...lstIconSimple]
 var shuffleLstIcons = lstIcons.sort(() => (Math.random() > .5) ? 1 : -1);
@@ -66,6 +66,13 @@ function cardSelect(event) {
   
 }
 
+function reloadGame() {
+  var lstCardValidate = document.getElementsByClassName('validate');
+  for (const [key, value] of Object.entries(lstCardValidate)) {
+    value.classList.remove('validate');
+  }
+  pairDone = 0;
+}
 </script>
 
 <template>
@@ -74,7 +81,7 @@ function cardSelect(event) {
       <div class="headerInfiniteDiv">
         <p class="goHome" @click="displayMode(null)">Back</p>
         <h3>Infinite Mode</h3>
-        <p>Reload</p>
+        <p @click="reloadGame()">Reload</p>
       </div>
       <div class="bodyInfiniteDiv">
         <template v-for="n in 16" :key="n">
