@@ -1,45 +1,63 @@
 <script setup>
+// IMPORT
+import CARD from '../CardComponent/CARD';
+import { onMounted, nextTick, ref } from 'vue';
 
-var lstIconSimple = [
-  "dove",
-  "cow",
-  "hippo",
-  "otter",
-  "dragon",
-  "shrimp",
-  "locust",
-  "frog",
-]
-var lstIcons = [...lstIconSimple, ...lstIconSimple]
-var shuffleLstIcons = lstIcons.sort(() => (Math.random() > .5) ? 1 : -1);
+// COMPONENTS
+import CardComponent from '../CardComponent/Card.vue';
 
+// EMIT
 const emit = defineEmits(['goHome']);
 
-var displayMode = (mode) => {
+const displayMode = (mode) => {
   emit('goHome',mode);
 };
 
-var lstIconsClickede = [];
+
+class Carte {
+  constructor (name, traduction) {
+    this.name = name;
+    this.traduction = traduction;
+  }
+}
+
+let data_card = ref([]);
+
+const makeDataCard = async () => {
+  const shuffleLstIcons = CARD.sort(() => (Math.random() > .5) ? 1 : -1);
+  data_card.value = [];
+  await nextTick();
+  for (const card of shuffleLstIcons) {
+    const new_card = new Carte(card.name, card.traduction);
+    
+    data_card.value.push(new_card);
+  }
+}
+
+function reloadGame() {
+  makeDataCard();
+}
+
+
 var cardClicked = 0;
 var pairDone = 0;
+var lstIconsClicked = [];
 
-function cardSelect(event) {
+const cardSelect = (event) => {
   let card = event.currentTarget;
   
   if (card.classList[1] != 'validate') {
     if (card.classList[1] != 'active') {
       if (cardClicked < 2) {
         card.classList.add('active');
-        if (card.childNodes[0].tagName === 'INPUT') {
-          lstIconsClickede.push(card.childNodes[0].value);
-        }
+        lstIconsClicked.push(card.id);
         cardClicked++;
       }
       if (cardClicked == 2) {
         var lstCardClicked = document.getElementsByClassName('active');
         setTimeout(function() {
             if (cardClicked != 2) {return;}
-            if (lstIconsClickede[0] == lstIconsClickede[1]) {
+            if (lstIconsClicked[0] == lstIconsClicked[1]) {
               lstCardClicked[1].classList.add('validate')
               lstCardClicked[1].classList.remove('active')
               lstCardClicked[0].classList.add('validate')
@@ -52,27 +70,21 @@ function cardSelect(event) {
               lstCardClicked[1].classList.remove('active')
               lstCardClicked[0].classList.remove('active')
             }
-            lstIconsClickede = [];
+            lstIconsClicked = [];
             lstCardClicked = [];
             cardClicked = 0;
         }, 1000);
       }
-      
     } else {
       card.classList.remove('active');
       cardClicked--;
     }
   }
-  
 }
 
-function reloadGame() {
-  var lstCardValidate = document.getElementsByClassName('validate');
-  for (const [key, value] of Object.entries(lstCardValidate)) {
-    value.classList.remove('validate');
-  }
-  pairDone = 0;
-}
+onMounted(makeDataCard);
+
+
 </script>
 
 <template>
@@ -81,22 +93,10 @@ function reloadGame() {
       <div class="headerInfiniteDiv">
         <p class="goHome" @click="displayMode(null)">Back</p>
         <h3>Infinite Mode</h3>
-        <p @click="reloadGame()">Reload</p>
+        <p class="reload" @click="reloadGame()">Reload</p>
       </div>
       <div class="bodyInfiniteDiv">
-        <template v-for="n in 16" :key="n">
-          <div :id="`card-${n}`" class="card" @click="cardSelect($event)">
-            <input type="hidden" name="icon" :value=shuffleLstIcons[n-1]>
-            <div class="card-side back">
-              <span class="cardBack">?</span>
-            </div>
-            <div class="card-side front">
-              <span>
-                <font-awesome-icon :icon="['fas', shuffleLstIcons[n-1]]" />
-              </span>
-            </div>
-          </div>
-        </template>
+        <card-component v-for="(card, index) in data_card" :key="index" :carte="card" :index="index" @cardSelect="cardSelect"></card-component>
       </div>
     </div>
   </div>

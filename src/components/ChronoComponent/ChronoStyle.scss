@@ -20,7 +20,8 @@
 
 .headerChronoDiv {
   display: flex;
-  gap: 263px;
+  justify-content: space-between;
+  gap: auto;
   padding: 15px 30px;
   border-bottom: 1px solid var(--wito-white-light-25);
 }
@@ -30,10 +31,27 @@
   font-weight: 900;
 }
 
-.bodyChronoDiv {
-  padding: 30px 50px;
+.timerChronoDiv {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  font-size: var(--wito-text-height-24);
 }
 
-.goHome {
+.bodyChronoDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px 50px 30px;
+  gap: 25px 50px;
+  max-width: 700px;
+}
+
+.goHome, .reload {
   cursor: pointer;
+}
+
+.goHome:hover, .reload:hover {
+  border-bottom: 1px solid var(--havelock-blue-50);
 }
