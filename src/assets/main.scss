@@ -17,3 +17,34 @@
   height: calc(100% - 30px);
 }
 
+.notAvailable {
+  display: none;
+}
+
+
+@media only screen and ((max-device-width: 714px) or (max-device-height: 774px)) {
+  .notAvailable {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: auto;
+    padding: 15px 0px;
+    height: calc(100% - 30px);
+    max-width: 300px;
+    color: var(--wito-text-header);
+    gap: 10px;
+    font-size: var(--wito-text-height-16);
+    
+    p {
+      font-family: 'Coustard', sans-serif;
+      
+      span {
+        font-weight: 900;
+      }
+    }
+  }
+  .bodyDiv {
+    display: none;
+  }
+}

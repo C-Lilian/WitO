@@ -13,3 +13,11 @@
   font-size: var(--wito-text-height-32);
   color: var(--wito-text-header);
 }
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-device-width: 774px) and (max-device-height: 774px) {
+  .titleApp {
+    font-size: var(--wito-text-height-24);
+  }
+}

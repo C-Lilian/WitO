@@ -15,6 +15,10 @@
 
 <template>
   <header-component @goHome="setMode"></header-component>
+  <div class="notAvailable">
+    <p><span>Where Is The Other ?</span> is not available on this size of screen.</p>
+    <p>Please try on bigger screen.</p>
+  </div>
   <div class="bodyDiv">
     <menu-component v-if="gameValue === null" @goHome="setMode"></menu-component>
     <infinite-component v-if="gameValue === 'infinite'" @goHome="setMode"></infinite-component>
