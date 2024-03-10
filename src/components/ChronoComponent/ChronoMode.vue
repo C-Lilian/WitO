@@ -5,6 +5,7 @@ import { onMounted, nextTick, ref } from 'vue';
 
 // COMPONENTS
 import CardComponent from '../CardComponent/Card.vue';
+import VictoryComponent from '../VictoryComponent/Victory.vue';
 
 // EMIT
 const emit = defineEmits(['goHome']);
@@ -44,6 +45,7 @@ function reloadGame() {
 
 
 // GAME FUNCTION
+var Msg = ref("");
 var cardClicked = 0;
 var pairDone = 0;
 var lstIconsClicked = [];
@@ -71,7 +73,7 @@ const cardSelect = (event) => {
               pairDone++;
               if (pairDone == 8) {
                 stop();
-                alert("Bravo, vous avez gagné !")
+                victory();
               }
             } else {
               lstCardClicked[1].classList.remove('active')
@@ -80,7 +82,7 @@ const cardSelect = (event) => {
             lstIconsClicked = [];
             lstCardClicked = [];
             cardClicked = 0;
-        }, 1000);
+        }, 800);
       }
     } else {
       card.classList.remove('active');
@@ -94,7 +96,7 @@ const cardSelect = (event) => {
 var clock = ref({
   el: '#clock',
   data: {
-    time: '00:00:00.000'
+    time: '00:00.000'
   }
 });
 
@@ -133,19 +135,17 @@ const reset = () => {
   stoppedDuration = 0;
   timeBegan = null;
   timeStopped = null;
-  clock.value.data.time = "00:00:00.000";
+  clock.value.data.time = "00:00.000";
 }
 
 const clockRunning = () => {
   var currentTime = new Date()
   , timeElapsed = new Date(currentTime - timeBegan - stoppedDuration)
-  , hour = timeElapsed.getUTCHours()
   , min = timeElapsed.getUTCMinutes()
   , sec = timeElapsed.getUTCSeconds()
   , ms = timeElapsed.getUTCMilliseconds();
 
   clock.value.data.time = 
-    zeroPrefix(hour, 2) + ":" + 
     zeroPrefix(min, 2) + ":" + 
     zeroPrefix(sec, 2) + "." + 
     zeroPrefix(ms, 3);
@@ -160,19 +160,34 @@ const zeroPrefix = (num, digit) => {
 }
 
 
+// VICTORY MODAL
+const victory = () => {
+  Msg.value = "Votre temps est de "+ clock.value.data.time;
+  var modalWin = document.getElementById('vicoryModalNode');
+  modalWin.style.display = 'flex';
+}
+
+function closeVictory() {
+  var modalWin = document.getElementById('vicoryModalNode');
+  modalWin.style.display = 'none';
+  reloadGame();
+}
+
+
 // ON
 onMounted(makeDataCard);
 
 </script>
 
 <template>
-  <div class="bodyDiv">
-    <div class="chronoDiv">
-      <div class="headerChronoDiv">
-        <p class="goHome" @click="displayMode(null)">Back</p>
-        <h3>Chrono Mode</h3>
-        <p class="reload" @click="reloadGame()">Reload</p>
-      </div>
+  <div class="chronoDiv">
+    <div class="headerChronoDiv">
+      <p class="goHome" @click="displayMode(null)">Back</p>
+      <h3>Chrono Mode</h3>
+      <p class="reload" @click="reloadGame()">Reload</p>
+    </div>
+    <div class="bodyGame">
+      <victory-component :Msg="Msg" @closeVictory="closeVictory"></victory-component>
       <div id="clock" class="timerChronoDiv">
         <span class="timerSpan">{{ clock.data.time }}</span>
       </div>

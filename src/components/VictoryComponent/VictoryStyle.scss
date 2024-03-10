@@ -1,0 +1,58 @@
+@import '/src/assets/main.scss';
+
+.vicoryModalNode {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: #202d4be5;
+  height: 100%;
+  width: 700px;
+  z-index: 999;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.modaleDiv {
+  display: flex;
+  // justify-content: center;
+  padding: 15px;
+  width: 350px;
+  background: var(--wito-color-background);
+  color: var(--wito-text-header);
+  // height: 150px;
+  border-radius: 5px;
+  border: 1px solid var(--havelock-blue-50);
+  box-shadow: 1px 1px 2px var(--wito-white-light-25);
+  flex-direction: column;
+}
+.modaleDiv h4 {
+  font-family: 'Coustard', sans-serif;
+  font-weight: 900;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+}
+.modaleDiv p {
+  text-align: center;
+}
+.btnModal {
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.btnModal button {
+  border-radius: 50px;
+  border-color: var(--wito-border-mode-btn);
+  padding: 5px 15px;
+  background: none;
+  color: var(--wito-text-header);
+}
+.activeBtnModal:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px var(--wito-black-light-25);
+}
+.notActiveBtnModal {
+  opacity: 45%;
+  cursor: not-allowed;
+}

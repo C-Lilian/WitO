@@ -15,9 +15,11 @@
 
 <template>
   <header-component @goHome="setMode"></header-component>
-  <menu-component v-if="gameValue === null" @selected="setMode"></menu-component>
-  <infinite-component v-if="gameValue === 'infinite'" @goHome="setMode"></infinite-component>
-  <chrono-component v-if="gameValue === 'chrono'" @goHome="setMode"></chrono-component>
+  <div class="bodyDiv">
+    <menu-component v-if="gameValue === null" @goHome="setMode"></menu-component>
+    <infinite-component v-if="gameValue === 'infinite'" @goHome="setMode"></infinite-component>
+    <chrono-component v-if="gameValue === 'chrono'" @goHome="setMode"></chrono-component>
+  </div>
   <footer-component></footer-component>
 </template>
 
