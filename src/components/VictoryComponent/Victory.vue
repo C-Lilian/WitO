@@ -1,7 +1,6 @@
 <script setup>
 const props = defineProps({Msg: String});
 
-
 const emit = defineEmits( ['closeVictory']);
 
 const closeVictory = () => {
@@ -12,7 +11,7 @@ const closeVictory = () => {
 <template>
   <div id="vicoryModalNode" class="vicoryModalNode">
         <div class="modaleDiv">
-          <h4>BRAVO !</h4>
+          <h4>CONGRATS !</h4>
           <p>{{ Msg }} !</p>
           <div class="btnModal">
             <button class="notActiveBtnModal" title="Download"><font-awesome-icon :icon="['fas', 'download']" /></button>
@@ -21,6 +20,5 @@ const closeVictory = () => {
         </div>
       </div>
 </template>
-
 
 <style lang="scss">@import './VictoryStyle.scss';</style>

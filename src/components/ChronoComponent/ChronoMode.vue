@@ -162,7 +162,7 @@ const zeroPrefix = (num, digit) => {
 
 // VICTORY MODAL
 const victory = () => {
-  Msg.value = "Votre temps est de "+ clock.value.data.time;
+  Msg.value = "Your time is "+ clock.value.data.time;
   var modalWin = document.getElementById('vicoryModalNode');
   modalWin.style.display = 'flex';
 }

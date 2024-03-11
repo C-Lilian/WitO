@@ -162,7 +162,7 @@ const zeroPrefix = (num, digit) => {
 
 // VICTORY MODAL
 const victory = () => {
-  Msg.value = "Vous avez gagné ";
+  Msg.value = "You have won ";
   var modalWin = document.getElementById('vicoryModalNode');
   modalWin.style.display = 'flex';
 }
