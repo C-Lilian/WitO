@@ -74,6 +74,7 @@ const cardSelect = (event) => {
               if (pairDone == 8) {
                 stop();
                 victory();
+                pairDone = 0;
               }
             } else {
               lstCardClicked[1].classList.remove('active')

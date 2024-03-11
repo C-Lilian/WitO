@@ -74,6 +74,7 @@ const cardSelect = (event) => {
               if (pairDone == 8) {
                 stop();
                 victory();
+                pairDone = 0;
               }
             } else {
               lstCardClicked[1].classList.remove('active')
@@ -162,6 +163,7 @@ const zeroPrefix = (num, digit) => {
 
 // VICTORY MODAL
 const victory = () => {
+  Msg.value = "";
   Msg.value = "Your time is "+ clock.value.data.time;
   var modalWin = document.getElementById('vicoryModalNode');
   modalWin.style.display = 'flex';
