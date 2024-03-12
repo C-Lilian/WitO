@@ -1,6 +1,6 @@
 # WitO
 
-__*Where Is The Other ?*__ is an application that allows people to play at different mode of memory games.
+[__*Where Is The Other ?*__](https://where-is-the-other.fr) is an application that allows people to play at different mode of memory games.
 
 ## Available mode
 
