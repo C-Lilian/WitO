@@ -22,7 +22,7 @@
 }
 
 
-@media only screen and ((max-device-width: 714px) or (max-device-height: 774px)) {
+@media only screen and ((max-width: 714px) or (max-height: 774px)) {
   .notAvailable {
     display: flex;
     flex-direction: column;
