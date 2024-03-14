@@ -21,8 +21,35 @@
   display: none;
 }
 
+@media only screen and ((max-width: 714px) or (max-height: 774px)) {
+  .notAvailable {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: auto;
+    padding: 15px 0px;
+    height: calc(100% - 30px);
+    max-width: 300px;
+    color: var(--wito-text-header);
+    gap: 10px;
+    font-size: var(--wito-text-height-16);
+    
+    p {
+      font-family: 'Coustard', sans-serif;
+      
+      span {
+        font-weight: 900;
+      }
+    }
+  }
+  .bodyDiv {
+    display: none;
+  }
+}
 
-@media all and ((max-width: 714px) or (max-height: 774px)) {
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */ 
   .notAvailable {
     display: flex;
     flex-direction: column;
