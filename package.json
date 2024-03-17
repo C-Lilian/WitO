@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.6",
+    "jspdf-invoice-template": "^1.4.3",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },

@@ -46,6 +46,7 @@ function reloadGame() {
 
 // GAME FUNCTION
 var Msg = ref("");
+var Time = ref("");
 var cardClicked = 0;
 var pairDone = 0;
 var lstIconsClicked = [];
@@ -165,6 +166,7 @@ const zeroPrefix = (num, digit) => {
 const victory = () => {
   Msg.value = "";
   Msg.value = "Your time is "+ clock.value.data.time;
+  Time.value = clock.value.data.time;
   var modalWin = document.getElementById('vicoryModalNode');
   modalWin.style.display = 'flex';
 }
@@ -189,7 +191,7 @@ onMounted(makeDataCard);
       <p class="reload" @click="reloadGame()">Reload</p>
     </div>
     <div class="bodyGame">
-      <victory-component :Msg="Msg" @closeVictory="closeVictory"></victory-component>
+      <victory-component :Msg="Msg" :Time="Time" @closeVictory="closeVictory"></victory-component>
       <div id="clock" class="timerChronoDiv">
         <span class="timerSpan">{{ clock.data.time }}</span>
       </div>

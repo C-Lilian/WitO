@@ -46,6 +46,7 @@ function reloadGame() {
 
 // GAME FUNCTION
 var Msg = ref("");
+var Time = ref("");
 var cardClicked = 0;
 var pairDone = 0;
 var lstIconsClicked = [];
