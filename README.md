@@ -4,8 +4,8 @@
 
 ## Available mode
 
-  - *Infinite mode* : is a mode where you can play as long as you want to practice. (available soon)
-  - *Chrono mode* : is a mode where you are timed and the goal is to have the highest score. (available soon)
+  - *Infinite mode* : is a mode where you can play as long as you want to practice.
+  - *Chrono mode* : is a mode where you are timed and the goal is to have the highest score.
   - *And more to come...*
 
 ## Project Setup
